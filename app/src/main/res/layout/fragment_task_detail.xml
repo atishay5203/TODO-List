@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TaskDetail">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RadioGroup
+            android:id="@+id/status_group"
+            android:layout_width="198dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginRight="28dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_detail">
+
+
+            <RadioButton
+                android:id="@+id/status_open"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="@string/open" />
+
+            <RadioButton
+                android:id="@+id/status_closed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/closed" />
+        </RadioGroup>
+
+        <View
+            android:id="@+id/priority_status"
+            android:layout_width="57dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/low_priority"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.047"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/add_title"
+            android:layout_width="270dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="37dp"
+            android:layout_marginLeft="37dp"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/enter_title"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine|textCapSentences|textAutoCorrect"
+
+            android:maxLength="20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/priority_status"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/add_detail"
+            android:layout_width="270dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="28dp"
+            android:autofillHints="Details Of Task"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/enter_det"
+            android:inputType="textMultiLine|textCapSentences|textAutoCorrect"
+            android:maxLength="80"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/add_title"
+            app:layout_constraintTop_toBottomOf="@+id/add_title" />
+
+        <Spinner
+            android:id="@+id/priority_select"
+            android:layout_width="272dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/status_group" />
+
+        <TextView
+            android:id="@+id/Status_label"
+            android:layout_width="91dp"
+            android:layout_height="31dp"
+            android:layout_marginTop="112dp"
+            android:gravity="center"
+            android:text="@string/status"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/status_group"
+            app:layout_constraintHorizontal_bias="0.225"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/priority_status" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:gravity="center"
+            android:text="@string/priority"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/Status_label"
+            app:layout_constraintHorizontal_bias="0.535"
+            app:layout_constraintStart_toStartOf="@+id/Status_label"
+            app:layout_constraintTop_toBottomOf="@+id/Status_label" />
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="79dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginLeft="44dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/save"
+            android:textColor="#EA0E0E"
+            app:backgroundTint="#8AD2F3"
+            app:layout_constraintBottom_toBottomOf="@+id/delete"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/delete"
+            app:layout_constraintVertical_bias="0.888" />
+
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="121dp"
+            android:layout_marginLeft="121dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="76dp"
+            android:layout_marginRight="76dp"
+            android:text="@string/delete"
+            android:textColor="#EA0E0E"
+            app:backgroundTint="#8AD2F3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toEndOf="@+id/save"
+            app:layout_constraintTop_toBottomOf="@+id/priority_select" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
